@@ -7,10 +7,11 @@ import android.os.Bundle
 import android.text.format.DateFormat.is24HourFormat
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
+import com.ibrahim.busschedule.getFormattedDateTime
 import java.text.DateFormat
 import java.util.*
 
-class DatePickerFragment: DialogFragment(),DatePickerDialog.OnDateSetListener{
+class DatePickerFragment(val callback:(String)->Unit): DialogFragment(),DatePickerDialog.OnDateSetListener{
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val c = Calendar.getInstance()
@@ -21,7 +22,9 @@ class DatePickerFragment: DialogFragment(),DatePickerDialog.OnDateSetListener{
     }
 
     override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int) {
-
+        val c = Calendar.getInstance()
+        val selectDate = getFormattedDateTime(c.timeInMillis,"dd/MM/yyyy")
+        callback(selectDate)
     }
 
 }

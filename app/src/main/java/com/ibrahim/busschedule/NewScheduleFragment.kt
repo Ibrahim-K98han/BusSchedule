@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import android.widget.RadioButton
+import com.ibrahim.busschedule.customedialogs.DatePickerFragment
 import com.ibrahim.busschedule.databinding.FragmentNewScheduleBinding
 
 class NewScheduleFragment : Fragment() {
@@ -23,7 +25,9 @@ class NewScheduleFragment : Fragment() {
         initSpinner()
         initBusTypeRadioGroup()
         binding.showDateTV.setOnClickListener {
-
+            DatePickerFragment{
+                binding.showDateTV.text = it
+            }.show(childFragmentManager,null)
         }
         binding.showTimeTV.setOnClickListener {
 
