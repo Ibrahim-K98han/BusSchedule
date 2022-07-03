@@ -25,6 +25,9 @@ class NewScheduleFragment : Fragment() {
         binding.showDateTV.setOnClickListener {
 
         }
+        binding.showTimeTV.setOnClickListener {
+
+        }
         return binding.root
     }
 
