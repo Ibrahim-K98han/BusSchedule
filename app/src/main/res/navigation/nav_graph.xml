@@ -21,6 +21,8 @@
         tools:layout="@layout/fragment_new_schedule" >
         <action
             android:id="@+id/action_newScheduleFragment_to_scheduleListFragment"
-            app:destination="@id/scheduleListFragment" />
+            app:destination="@id/scheduleListFragment"
+            app:popUpTo="@id/scheduleListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
