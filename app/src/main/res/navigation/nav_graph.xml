@@ -18,5 +18,9 @@
         android:id="@+id/newScheduleFragment"
         android:name="com.ibrahim.busschedule.NewScheduleFragment"
         android:label="fragment_new_schedule"
-        tools:layout="@layout/fragment_new_schedule" />
+        tools:layout="@layout/fragment_new_schedule" >
+        <action
+            android:id="@+id/action_newScheduleFragment_to_scheduleListFragment"
+            app:destination="@id/scheduleListFragment" />
+    </fragment>
 </navigation>

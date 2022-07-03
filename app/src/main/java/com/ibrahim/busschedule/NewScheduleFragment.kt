@@ -1,15 +1,15 @@
 package com.ibrahim.busschedule
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.DatePicker
-import android.widget.RadioButton
+import android.widget.*
+import androidx.navigation.fragment.findNavController
 import com.ibrahim.busschedule.customedialogs.DatePickerFragment
+import com.ibrahim.busschedule.customedialogs.TmePickerFragment
 import com.ibrahim.busschedule.databinding.FragmentNewScheduleBinding
 
 class NewScheduleFragment : Fragment() {
@@ -30,9 +30,35 @@ class NewScheduleFragment : Fragment() {
             }.show(childFragmentManager,null)
         }
         binding.showTimeTV.setOnClickListener {
-
+            TmePickerFragment{
+                binding.showTimeTV.text = it
+            }.show(childFragmentManager,null)
+        }
+        binding.saveBtn.setOnClickListener {
+            saveInfo()
         }
         return binding.root
+    }
+
+    private fun saveInfo() {
+        val name = binding.busNameInputET.text.toString()
+        val date = binding.showDateTV.text.toString()
+        val time = binding.showTimeTV.text.toString()
+        if(from == to){
+            Toast.makeText(requireActivity(), "From and To are same", Toast.LENGTH_SHORT).show()
+            return
+        }
+        val schedule = BusSchedule(
+            id = System.currentTimeMillis(),
+            busName = name,
+            busType = busType,
+            departureDate = date,
+            departureTime = time,
+            from = from,
+            to = to
+        )
+        scheduleList.add(schedule)
+        findNavController().navigate(R.id.action_newScheduleFragment_to_scheduleListFragment)
     }
 
     private fun initBusTypeRadioGroup() {
