@@ -1,129 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".NewScheduleFragment">
-    <EditText
-        android:id="@+id/busNameInputET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Bus Name"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Route"
-        android:gravity="center"
-        android:padding="10dp"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".NewScheduleFragment">
+
+        <EditText
+            android:id="@+id/busNameInputET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FROM"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_weight="1"
-            android:textStyle="bold"/>
-        <Spinner
-            android:id="@+id/citySpinnerFrom"
-            android:layout_weight="2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+            android:hint="Enter Bus Name" />
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TO"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_weight="1"
-            android:textStyle="bold"/>
-        <Spinner
-            android:id="@+id/citySpinnerTo"
-            android:layout_weight="2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+            android:text="Select Route"
+            android:gravity="center"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FROM"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/citySpinnerFrom"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TO"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/citySpinnerTo"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/dateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Departure Date"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/showDateTV"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/timeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Departure Time"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/showTimeTV"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Bus Type"
+            android:gravity="center"
+            android:padding="10dp" />
+
+        <RadioGroup
+            android:id="@+id/busTypeRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/economyRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_marginRight="5dp"
+                android:text="Economy" />
+
+            <RadioButton
+                android:id="@+id/businessRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:layout_marginLeft="5dp"
+                android:text="Economy" />
+        </RadioGroup>
+
         <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:id="@+id/dateBtn"
+            android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Departure Date"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/showDateTV"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="SAVE" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:id="@+id/timeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Departure Time"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/showTimeTV"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Bus Type"
-        android:gravity="center"
-        android:padding="10dp"/>
-    <RadioGroup
-        android:id="@+id/busTypeRG"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/economyRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginRight="5dp"
-            android:text="Economy"/>
-        <RadioButton
-            android:id="@+id/businessRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:layout_marginLeft="5dp"
-            android:text="Economy"/>
-    </RadioGroup>
-    <Button
-        android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:text="SAVE"/>
-</LinearLayout>
+</layout>
