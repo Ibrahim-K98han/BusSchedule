@@ -18,8 +18,11 @@ class ScheduleListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentScheduleListBinding.inflate(inflater,container,false)
-        val adapter = ScheduleAdapter{
+        binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_scheduleListFragment_to_newScheduleFragment)
+        }
+        val adapter = ScheduleAdapter{
+            //findNavController().navigate(R.id.action_scheduleListFragment_to_newScheduleFragment)
         }
         binding.scheduleRV.layoutManager = LinearLayoutManager(activity)
         binding.scheduleRV.adapter = adapter
