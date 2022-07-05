@@ -121,6 +121,8 @@
             android:layout_height="wrap_content"
             android:text="Select Bus Type"
             android:gravity="center"
+            android:background="@color/white"
+            android:textStyle="bold"
             android:padding="10dp" />
 
         <RadioGroup
